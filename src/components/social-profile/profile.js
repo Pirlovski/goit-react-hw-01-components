@@ -1,10 +1,12 @@
-const  Profile =({avatar , username , tag , location ,followers , views , likes}) {
 
-return (<div>
+export default function Profile({avatar, username, tag, location, followers, views, likes})  {
+
+return (
+  <div>
 
   <div class="profile">
   <div class="description">
-    <img
+    <img className="Avatar"
       src={avatar}
       alt="User avatar"
       class="avatar"
