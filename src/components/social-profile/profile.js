@@ -1,37 +1,42 @@
+import PropTypes from 'prop-types';
+import s from './Profile.module.css';
 
-export default function Profile({avatar, username, tag, location, followers, views, likes})  {
+export default function Profile({ avatar, username, tag, location, stats }) {
+  return (
+    <div className={s.profile}>
+      <div className={s.description}>
+        <img src={avatar} alt={username} className={s.avatar} />
+        <p className={s.name}>{username}</p>
+        <p className={s.tag}>@{tag}</p>
+        <p className={s.location}>{location}</p>
+      </div>
 
-return (
-  <div>
-
-  <div class="profile">
-  <div class="description">
-    <img className="Avatar"
-      src={avatar}
-      alt="User avatar"
-      class="avatar"
-    />
-    <p class="name">{username}</p>
-    <p class="tag">{tag}</p>
-    <p class="location">{location}</p>
-  </div>
-
-  <ul class="stats">
-    <li>
-      <span class="label">{followers}</span>
-      <span class="quantity">1000</span>
-    </li>
-    <li>
-      <span class="label">{views}</span>
-      <span class="quantity">2000</span>
-    </li>
-    <li>
-      <span class="label">{likes}</span>
-      <span class="quantity">3000</span>
-    </li>
-  </ul>
-</div>
-
-</div>)
-
+      <ul className={s.statsList}>
+        <li className={s.statsListItem}>
+          <span className={s.label}>Followers</span>
+          <span className={s.quantity}>{stats.followers}</span>
+        </li>
+        <li className={s.statsListItem}>
+          <span className={s.label}>Views</span>
+          <span className={s.quantity}>{stats.views}</span>
+        </li>
+        <li className={s.statsListItem}>
+          <span className={s.label}>Likes</span>
+          <span className={s.quantity}>{stats.likes}</span>
+        </li>
+      </ul>
+    </div>
+  );
 }
+
+Profile.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    likes: PropTypes.number,
+    views: PropTypes.number,
+    followers: PropTypes.number,
+  }).isRequired,
+};
