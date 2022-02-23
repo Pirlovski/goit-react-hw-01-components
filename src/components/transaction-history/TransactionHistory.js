@@ -16,7 +16,6 @@ export default function TransactionHistory({ items }) {
 
         {items.map(({ id, type, amount, currency }) => (
           <tbody key={id} className={s.tbody}>
-            {' '}
             <TransactionHistoryItem
               type={type}
               amount={amount}

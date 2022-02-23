@@ -25,7 +25,7 @@ export default function App() {
         </div>
       </Section>
       <Section title="Upload stats">
-        <Statistics stats={data} />
+        {/* <Statistics stats={data} /> */}
       </Section>
       <Section title="3rd task">
         <FriendList friends={friends} />
