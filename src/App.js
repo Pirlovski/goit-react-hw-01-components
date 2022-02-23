@@ -1,5 +1,5 @@
 import './App.css';
-import Profile from './components/social-profile/Profile';
+import Profile from './components/social-profile/profile';
 import Statistics from './components/statistics/StatisticsList';
 import data from './components/statistics/data.json';
 import user from './components/social-profile/user.json';
@@ -25,7 +25,7 @@ export default function App() {
         </div>
       </Section>
       <Section title="Upload stats">
-        {/* <Statistics stats={data} /> */}
+        <Statistics stats={data} />
       </Section>
       <Section title="3rd task">
         <FriendList friends={friends} />
